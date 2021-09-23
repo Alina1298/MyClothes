@@ -1,0 +1,33 @@
+<script defer src="/js/redactClothes.js"></script>
+
+<form name="formAddClothes" action="/clothes/redact/{{clothes.id}}" method="PUT">
+  <div class="mb-3">
+    <label class="form-label">Адрес фотографии</label>
+    <input type="url" name="photo" value="{{clothes.photo}}">
+  </div>
+
+  <label class="form-label mb-3">Выберите категорию</label>
+  <select class="form-select" aria-label="Default select example" name="category">
+    {{#each categories}}
+    <option value="{{this.title}}">{{this.title}}</option>
+    {{/each}}
+  </select>
+  <input type="radio" name="season" value="лето">Лето</input>
+  <input type="radio" name="season" value="осень">Осень</input>
+  <input type="radio" name="season" value="зима">Зима</input>
+  <input type="radio" name="season" value="весна">Весна</input>
+
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Цвет</label>
+    <input type="text" name="color" value="{{clothes.color}}">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Название</label>
+    <input type="text" name="title" value="{{clothes.title}}">
+  </div>
+  <input type="hidden" name="id" value="{{clothes.id}}">
+  <button id="addClothes" type="submit" class="btn btn-primary">Редактировать</button>
+</form>
