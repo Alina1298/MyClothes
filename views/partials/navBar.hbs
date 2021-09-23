@@ -1,17 +1,91 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="nav-link active" aria-current="page" href="/">Главная страница</a>
+<nav class="navbar navbar-expand-md navbar-dark">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Главная страница</a>
+      </li>
       {{#if user}}
-      <div class="buttons">
-        <div class="content mr-5 is-large has-text-primary">Привет, {{user.name}}</div>
-        <a class="nav-link active" aria-current="page" href="/clothes">Добавить одежду</a>
-        <a class="nav-link active" aria-current="page" href="/clothes/my">Моя одежда</a>
-        <a class="nav-link active" aria-current="page" href="/user/logout">Выйти</a>
-        {{else}}
-        <a class="nav-link active" aria-current="page" href="/user/registration">Регистрация</a>
-        <a class="nav-link active" aria-current="page" href="/user/authorization">Авторизация</a>
-        {{/if}}
-      </div>
-    </div>
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Одежда
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="/clothes">Добавить одежду</a></li>
+          <li><a class="dropdown-item" href="/clothes/my">Моя одежда</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <ul class="mx-auto order-0 navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a id="nameUser" class="navbar-brand mx-auto" href="/user/logout">{{user.name}}, Выйти</a>
+    </li>
+  </ul>
+  {{else}}
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="/user/registration">Регистрация</a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="/user/authorization">Авторизация</a>
+    </li>
+  </ul>
+  {{/if}}
 </nav>
+
+
+{{!-- <nav class="navbar navbar-expand-md">
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <a class="navbar-brand" href="/">Главная страница</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        {{#if user}}
+        <li class="nav-item active active">
+          <a class="nav-link" aria-current="page" href="#"></a>
+        </li>
+        <li class="nav-item active dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Одежда
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/clothes">Добавить одежду</a></li>
+            <li><a class="dropdown-item" href="/clothes/my">Моя одежда</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/user/logout">Выйти</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/user/registration">Регистрация</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/user/authorization">Авторизация</a>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+</nav> --}}
+
+{{!-- <ul class="navbar-nav ml-auto">
+  <li class="nav-item active">
+    <a class="nav-link active" aria-current="page" href="/user/logout">Выйти</a>
+  </li>
+  {{else}}
+  <li class="nav-item active">
+    <a class="nav-link active" aria-current="page" href="/user/registration">Регистрация</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link active" aria-current="page" href="/user/authorization">Авторизация</a>
+  </li>
+  {{/if}}
+</ul>
+</div>
+</div>
+</nav> --}}

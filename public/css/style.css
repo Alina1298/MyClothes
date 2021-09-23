@@ -1,0 +1,27 @@
+body {
+  height: 100%;
+  color: white;
+  background-color: #19ABB5;
+  background: url(https://st2.depositphotos.com/4221109/9748/i/600/depositphotos_97480884-stock-photo-clothes-hanging-on-rail-in.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 26px;
+}
+#reg{
+  background-color: rgb(139, 122, 122);
+  position: fixed; left: 40%;
+}
+.form{
+  font-size: 20px;
+  width: 600px;
+  padding: 50px;
+  background: #ccc;
+  position: fixed; top: 50%; left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.error{
+  position: fixed; right: 30%;
+}
