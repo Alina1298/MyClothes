@@ -20,19 +20,19 @@ module.exports = {
       color: {
         type: Sequelize.STRING
       },
-      userId: {
+      categoryId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Users',
+          model: 'Categories',
           key: 'id'
         },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       },
-      categoryId: {
+      userId: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Categories',
+          model: 'Users',
           key: 'id'
         },
         onDelete: 'CASCADE',

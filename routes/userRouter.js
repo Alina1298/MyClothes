@@ -9,16 +9,15 @@ router.route('/registration')
   })
 
   .post(async (req, res) => {
-    const { name, email, password, gender } = req.body;
+    const { name, email, password } = req.body;
 
-    if (name && email && password, gender) {
+    if (name && email && password) {
       const hashPass = await bcrypt.hash(password, 10);
       try {
-        const newUser = await User.create({ name, gender, email, password: hashPass });
+        const newUser = await User.create({ name, email, password: hashPass });
         req.session.user = {
           id: newUser.id,
-          name: newUser.name,
-          gender: newUser.gender
+          name: newUser.name
         }
         return res.redirect('/');
       } catch (err) {

@@ -1,13 +1,15 @@
 <script defer src="/js/deleteClothes.js"></script>
 
-<div data-postwrapper>
+<div class="myClothes" data-postwrapper>
   {{#each clothes}}
-  <div class="card" style="width: 18rem;" data-postid="{{this.id}}">
-    <img src="{{this.photo}}" class="card-img-top" alt="фото одежды">
+  <div class="formMyClothes" class="card" data-postid="{{this.id}}">
+    <img src="{{this.photo}}" class="card-img-top" alt="фото одежды" height="300px">
     <div class="card-body">
       <h5 class="card-title">{{this.title}}</h5>
-      <button id="deleteClothes" class="btn btn-primary">Удалить</button>
-      <a id="deleteClothes" class="btn btn-primary" href="/clothes/redact/{{this.id}}">Редактировать</a>
+      <div id="buttomsClothes">
+        <button id="deleteClothes" class="btn btn-primary">Удалить</button>
+        <a id="buttomRedactClothes" class="btn btn-primary" href="/clothes/redact/{{this.id}}">Редактировать</a>
+      </div>
     </div>
   </div>
   {{/each}}

@@ -3,7 +3,7 @@ const $addClothes = document.querySelector('#addClothes');
 
 $addClothes.addEventListener('click', async (event) => {
   event.preventDefault();
-  if (event.target.innerText === 'Добавить') {
+  if (event.target.innerText === 'Добавить' || event.target.innerText === 'Вещь добавлена в мою одежду') {
 
     const data = Object.fromEntries(new FormData($formAddClothes))
     const response = await fetch('/clothes', {
