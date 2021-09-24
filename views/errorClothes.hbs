@@ -1,0 +1,64 @@
+<script defer src="/js/weatherClothes.js"></script>
+
+<h1 class="error">{{message}}</h1>
+
+{{#if city_title}}
+<div class="weather">
+  <div id="ml_05d8e759"
+    style="vertical-align: baseline; padding: 0px; margin: 1px 0px 0px; font-family: Arial, Helvetica, sans-serif; width: 300px; border-radius: 4px; text-align: center; background-color: rgb(255, 255, 255); border: 1px solid rgb(243, 229, 207); line-height: 14px;">
+
+    <div style="padding:0;margin:0;" id="ml_05d8e759_i" v="1.1"
+      a="{&quot;t&quot;:&quot;a&quot;,&quot;lang&quot;:&quot;ru&quot;,&quot;ids&quot;:[],&quot;a_bg&quot;:&quot;#FFFFFF&quot;,&quot;a_br_c&quot;:&quot;#8E24AA&quot;,&quot;a_n_b&quot;:&quot;#8E24AA&quot;,&quot;a_icon&quot;:&quot;#FFFFFF00&quot;,&quot;a_con&quot;:&quot;#8E24AA&quot;,&quot;a_inter&quot;:&quot;#FFFFFF00&quot;,&quot;a_n_c&quot;:&quot;#FFFFFF&quot;,&quot;a_icon_color&quot;:&quot;#000000&quot;,&quot;a_con_c&quot;:&quot;#FFFFFF&quot;,&quot;a_int_h_color&quot;:&quot;#000000&quot;,&quot;a_int_temp_color&quot;:&quot;#000000&quot;,&quot;a_fn&quot;:&quot;Arial&quot;,&quot;p_w&quot;:300,&quot;p_cr&quot;:4}">
+      <div
+        style=";vertical-align:baseline;padding:0;margin:0;padding:7px 5px;padding-bottom:8px;font-weight:bold;font-size:14px;background-color:rgb(255, 255, 255);color:rgb(139, 122, 122);">
+        {{city_title}}</div>
+      <div style=";vertical-align:baseline;padding:0;margin:0;padding:5px;padding-top:8px;background-color:#FFFFFF00;">
+        <div style=";vertical-align:baseline;padding:0;margin:0;color:grey;font-size:11px;padding-bottom:2px;">
+          {{date}}</div>
+        <div
+          style=";vertical-align:baseline;padding:0;margin:0;height:45px;width:45px;display:inline-block;margin-right:10px;">
+        </div><span class="temperatura"
+          style=";vertical-align:baseline;padding:0;margin:0;font-size:20px;vertical-align:top;margin-top:15px;display:inline-block;color:#000000;">{{temp}}°C</span>
+        <span
+          style=";vertical-align:baseline;padding:0;margin:0;font-size:20px;vertical-align:top;margin-top:15px;display:inline-block;color:#000000;">{{description}}</span>
+      </div>
+      <img src="http://openweathermap.org/img/wn/{{icon}}@2x.png" alt="icon">
+      <div style=";vertical-align:baseline;padding:0;margin:0;background-color:#FFFFFF00;">
+        <div style=";vertical-align:baseline;padding:0;margin:0;width:50%;display:inline-block;margin-bottom:5px;">
+          <div
+            style=";vertical-align:baseline;padding:0;margin:0;margin-top:5px;font-size:12px;margin-bottom:3px;color:#000000;">
+            Минимальная температура</div>
+          <div style=";vertical-align:baseline;padding:0;margin:0;font-size: 15px;color:#000000;">{{min_temp}}°C
+          </div>
+        </div>
+        <div style=";vertical-align:baseline;padding:0;margin:0;width:50%;display:inline-block;margin-bottom:5px;">
+          <div
+            style=";vertical-align:baseline;padding:0;margin:0;margin-top:5px;font-size:12px;margin-bottom:3px;color:#000000;">
+            Максимальная температура</div>
+          <div style=";vertical-align:baseline;padding:0;margin:0;font-size: 15px;color:#000000;">{{max_temp}}°C
+          </div>
+        </div>
+        <div style=";vertical-align:baseline;padding:0;margin:0;width:50%;display:inline-block;margin-bottom:5px;">
+          <div
+            style=";vertical-align:baseline;padding:0;margin:0;margin-top:5px;font-size:12px;margin-bottom:3px;color:#000000;">
+            Скорость ветра</div>
+          <div style=";vertical-align:baseline;padding:0;margin:0;font-size: 15px;color:#000000;">{{wind_speed}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2 class="h2"> Комплект одежды на сегодня</h2>
+
+<div class="complect">
+  {{#each clothes}}
+  {{#if (check this.userId ../user.id)}}
+  <img src="{{this.photo}}" alt="photo" height="400">
+  <p class="title">{{this.title}}</p>
+  {{/if}}
+  {{/each}}
+</div>
+
+{{/if}}
