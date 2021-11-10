@@ -1,7 +1,7 @@
 # MyClothes
 Сайт генерации комплектов своей одежды в соответствии с погодой
 
-<h2 align="center">Видео ⬇</h2>
+<h2>Видео ⬇</h2>
 
 [![Watch the video](https://i9.ytimg.com/vi/hmiSTrb3XkE/mq1.jpg?sqp=COTcrowG&rs=AOn4CLDTz_-SirHrlavtpqdzjhf-4ba_7Q)](https://youtu.be/hmiSTrb3XkE)
 
