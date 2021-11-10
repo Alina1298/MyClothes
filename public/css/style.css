@@ -1,68 +1,73 @@
 body {
   height: 100%;
   color: white;
-  background-color: #19ABB5;
+  background-color: #19abb5;
   background: url(https://st2.depositphotos.com/4221109/9748/i/600/depositphotos_97480884-stock-photo-clothes-hanging-on-rail-in.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 26px;
 }
-.reg{
+.reg {
   background-color: rgb(139, 122, 122);
-  position: fixed; left: 40%
+  position: fixed;
+  left: 40%;
 }
-.form{
+.form {
   font-size: 20px;
   width: 600px;
   padding: 50px;
   background: #ccc;
-  position: fixed; top: 50%; left: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
-.error{
-  position: fixed; right: 30%;
+.error {
+  position: fixed;
+  right: 30%;
 }
-#season{
+#season {
   font-size: 20px;
   word-spacing: 10px;
 }
-#buttomRedactClothes{
+#buttomRedactClothes {
   word-spacing: 10px;
   background-color: rgb(139, 122, 122);
 }
-#deleteClothes{
+#deleteClothes {
   background-color: rgb(139, 122, 122);
 }
-#buttomsClothes{
+#buttomsClothes {
   display: flex;
   justify-content: space-around;
 }
-.formMyClothes{
+.formMyClothes {
   font-size: 20px;
   width: 25rem;
   padding: 50px;
-  background: #ccc;
 }
-.myClothes{
-  display: grid;  
-  grid-auto-flow: column;
+.myClothes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
-.city{
+.city {
   background-color: rgb(139, 122, 122);
 }
-.h2{
+.h2 {
   text-align: center;
+  margin-left: -100px;
 }
-.complect{
-  /* display: grid;  
-  grid-auto-flow: column; */
+.complect {
   display: flex;
   align-items: center;
-  justify-content: center;
-position:relative;
+  justify-content: space-evenly;
+  position: relative;
+  margin-top: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
-.next{
+.next {
   background-color: rgb(139, 122, 122);
   text-decoration: none;
   color: black;
@@ -70,23 +75,23 @@ position:relative;
   justify-content: center;
   width: 250px;
   text-align: center;
-  margin-left: 300px;
-    margin-top: 42px;
+  margin-left: 490px;
+  margin-top: 42px;
 }
-.weather{
+.weather {
   width: 16%;
   margin-bottom: 300px;
 }
-.container-center{
+.container-center {
   width: 84%;
 }
-.all-items{
+.all-items {
   display: flex;
   height: 870px;
-  align-items: center;
+  align-items: flex-end;
 }
-.center{
+.center {
   width: 100%;
   padding: 57px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }

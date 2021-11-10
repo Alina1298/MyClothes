@@ -8,7 +8,6 @@ router.route('/')
       const categories = await Category.findAll();
       res.render('addclothes', { categories })
     } catch (error) {
-      console.log(error)
       return res.sendStatus(404).end()
     }
   })
@@ -19,7 +18,6 @@ router.route('/')
       const clothes = await Clothes.create({ title: title, photo: photo, season: season, color: color, userId: req.session?.user?.id, categoryId: categoryId.id })
       return res.json(clothes)
     } catch (error) {
-      console.log(error)
       return res.sendStatus(500).end();
     }
   })
@@ -30,7 +28,6 @@ router.route('/my')
       const clothes = await Clothes.findAll();
       res.render('myClothes', { clothes })
     } catch (error) {
-      console.log(error)
       return res.sendStatus(404).end()
     }
   })
@@ -53,17 +50,14 @@ router.route('/redact/:id')
       const clothes = await Clothes.findOne({ where: { id: id } });
       res.render('redactClothes', { clothes, categories })
     } catch (error) {
-      console.log(error)
       return res.sendStatus(404).end()
     }
   })
   .put(async (req, res) => {
     try {
-      console.log('req.body', req.body)
       await Clothes.update(req.body, { where: { id: req.body.id } })
       res.sendStatus(200).end()
     } catch (error) {
-      console.log('req.body', req.body)
       return res.sendStatus(403).end()
     }
   })

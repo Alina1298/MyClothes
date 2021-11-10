@@ -8,7 +8,6 @@ router.route('/')
   .get(async (req, res) => {
     try {
       const { city_title } = req.query
-      console.log(city_title)
       const wheather = await axios(`https://api.openweathermap.org/data/2.5/weather?q=${city_title}&units=metric&lang=ru&appid=${process.env.API_WHEATHER}`);
       const data = wheather.data
       const description = data.weather.map(el => el.description).toString();
@@ -26,22 +25,12 @@ router.route('/')
 
       const clothesTop = await Clothes.findOne({ where: { season: categories.season, categoryId: categoryTop.id } });
       const clothesBottom = await Clothes.findOne({ where: { season: categories.season, categoryId: categoryBottom.id } });
-      
+
       const clothes = [clothesTop, clothesBottom]
 
-      if (clothes.includes(null)) {
-        return res.render('errorClothes', {
-          message: 'Тебе стоит пойти в магазин',
-          error: {}
-        })
-      } else {
-        return res.render('index', { city_title: city_title, temp: data.main.temp, description: description, icon: icon, min_temp: data.main.temp_min, max_temp: data.main.temp_max, wind_speed: data.wind.speed, clothes, date: date })
-      }
-      // const clothes = await Clothes.findAll()
-      // res.render('index', { clothes })
+      return res.render('index', { city_title: city_title, temp: data.main.temp, description: description, icon: icon, min_temp: data.main.temp_min, max_temp: data.main.temp_max, wind_speed: data.wind.speed, clothes, date: date })
 
     } catch (error) {
-      console.log(error)
       return res.render('index')
     }
   })
